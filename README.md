@@ -15,11 +15,18 @@ kenedy@dev:~$ whoami
 ```
 ```
 kenedy@dev:~$ cat aboutme
-Computer Engineering student at UTFPR and Firmware Developer. I focus on applying rigorous software engineering directly to hardware constraints, bridging the gap between high-level logic and the physical limits of the silicon.
+Computer Engineering student at UTFPR & Firmware Developer. Blending rigorous
+software engineering with hardware constraints, bridging high-level logic
+with the physical limits of silicon.
 
-My work revolves around real-time embedded systems: bare-metal and RTOS-based architectures, sensor fusion, high-performance peripheral drivers, and power management. The microcontroller family changes; the fundamentals don't. I carry the same discipline across architectures, whether it's ARM Cortex-M, or whatever comes next.
+Work revolves around real-time embedded systems: bare-metal and RTOS,
+sensor fusion, high-performance peripheral drivers, and power management.
+The MCU family changes; fundamentals don't. Discipline stays the same across
+architectures, whether ARM Cortex-M or whatever comes next.
 
-My development philosophy is built around determinism and reliability. I treat firmware the same way I treat any serious software: version-controlled, modular, and rigorously validated. I build Python tooling to accelerate hardware validation and keep complexity manageable as systems scale.
+Philosophy is built on determinism and reliability. Firmware is treated like
+any serious software: version-controlled, modular, and rigorously validated.
+I build Python tooling to accelerate hardware validation and manage scaling.
 ```
 ```
 kenedy@dev:~$ ./pinout --show && tree ~/expertise
