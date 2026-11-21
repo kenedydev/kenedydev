@@ -49,6 +49,24 @@
     <mask id="fade-ends" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="782" style="mask-type:alpha">
       <rect width="880" height="782" fill="url(#fade-down)"/>
     </mask>
+    <linearGradient id="light-under-neon-fade" gradientUnits="userSpaceOnUse" x1="0" y1="272" x2="0" y2="361">
+      <stop offset="0" stop-color="white"/>
+      <stop offset=".64" stop-color="white" stop-opacity=".32"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="light-under-neon" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="380" style="mask-type:alpha">
+      <rect width="880" height="380" fill="url(#light-under-neon-fade)"/>
+    </mask>
+    <linearGradient id="tail-shadow-fade" gradientUnits="userSpaceOnUse" x1="0" y1="280" x2="0" y2="370">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".33" stop-color="white" stop-opacity="0"/>
+      <stop offset=".58" stop-color="white" stop-opacity=".75"/>
+      <stop offset=".87" stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="tail-shadow-area" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="370" style="mask-type:alpha">
+      <rect width="880" height="370" fill="url(#tail-shadow-fade)"/>
+    </mask>
     <radialGradient id="concrete" cx=".53" cy=".42" r=".72">
       <stop offset="0" stop-color="#292333"/>
       <stop offset=".53" stop-color="#201d28"/>
@@ -110,20 +128,60 @@
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.55" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
 
-    <path id="letter-k" d="M119 246 C145 216 149 152 174 121 C193 97 211 106 200 130 C190 151 168 171 151 186 M153 202 C179 191 194 172 209 163 M163 198 C180 205 181 235 201 239 C210 241 219 237 226 231"/>
-    <g id="name-ending">
-      <path d="M230 208 C257 209 284 196 289 179 C294 162 277 161 262 170 C245 180 230 199 232 217 C235 246 276 246 307 218"/>
-      <path d="M312 239 C321 214 326 184 335 166 M323 206 C343 181 363 158 379 168 C395 180 374 210 374 224 C374 240 392 242 414 224"/>
-      <path d="M429 204 C458 204 481 192 488 176 C494 159 477 157 462 165 C442 176 429 193 430 213 C432 241 462 245 501 216"/>
-      <path d="M595 180 C578 158 557 159 540 173 C522 188 512 210 515 224 C521 245 545 240 563 224 C589 201 611 149 626 111 C631 99 638 105 636 117 C628 149 601 191 594 215 C586 242 603 244 622 233 L636 224"/>
-      <path d="M658 166 C649 186 639 213 646 227 C653 244 674 237 693 219 C712 200 723 181 730 159 C718 192 710 236 685 270 C665 298 617 302 613 279 C611 266 627 255 651 254 C681 252 714 253 754 235"/>
+    <!-- Knock out the rear tubes where their silhouettes pass under a letter. -->
+    <path id="letter-k-shape" transform="translate(96 92)" d="M13 12C28-4 48-12 67-7Q74-6 68 0C52 14 46 39 37 65Q36 72 41 68C60 47 73 25 92 14Q101 9 112 16Q120 21 114 27C93 45 79 64 65 81Q62 85 67 90C84 103 93 124 106 136Q112 141 117 141L121 140Q126 139 122 145L97 166Q88 172 81 162C65 137 53 125 42 118Q34 112 31 120L24 153Q23 161 14 162L0 157Q-8 155-6 147C3 113 9 79 14 52Q18 35 21 27L9 28Q2 27 7 21Z"/>
+    <path id="first-e-shape" transform="translate(205 124) rotate(-6 54 68)" d="M31 15C49 4 80-2 96 10C107 18 113 36 108 50C104 63 91 74 72 77L34 81Q25 83 29 92C34 107 54 103 70 99L92 92Q101 88 105 95L110 107Q113 114 104 119C82 132 54 138 32 131C5 124-6 105 0 77C4 52 12 27 31 15Z M36 56Q33 62 40 62L66 58C81 55 88 47 87 38Q85 26 68 30C52 33 44 42 36 56Z"/>
+    <path id="letter-n-shape" transform="translate(323 111) rotate(3 57 79)" d="M9 29Q15 14 23 8L40 3Q46 1 46 9L43 29C56 20 72 12 89 13C110 14 121 29 117 49C114 68 100 91 97 103Q94 111 101 110L111 107Q118 106 120 113L120 125Q120 131 114 134C98 142 80 144 69 135C60 127 63 115 67 102L82 60C85 52 85 46 78 46C65 45 49 56 41 66Q37 72 34 82L23 130Q21 139 13 139L-2 135Q-9 134-7 126C0 99 9 69 13 44L6 45Q1 45 3 39Z"/>
+    <path id="second-e-shape" transform="translate(447 103) rotate(2 54 75)" d="M29 24C45 11 74 4 91 14C106 23 112 39 106 55C101 70 88 78 71 83L34 91Q26 93 30 101C39 118 67 114 82 103Q92 95 96 87Q98 81 104 86L114 98Q118 102 115 109C101 127 66 148 40 145C8 136-4 118 0 89C3 64 11 40 29 24Z M34 65Q32 71 38 70L64 65C78 61 86 53 87 45Q88 33 74 33C56 33 44 47 34 65Z"/>
+    <path id="letter-d-shape" transform="translate(564 78)" d="M88 18Q99-1 109-4L127 0Q133 1 127 8C115 24 110 38 106 53Q101 72 97 96L81 149Q78 158 85 157L88 151Q94 146 98 153L101 162Q104 168 97 172C82 181 69 182 61 173C50 184 32 189 16 181C0 174-9 156-5 137C-1 110 18 85 41 75Q59 67 72 75C78 54 83 31 90 15Z M23 137C21 148 24 155 33 156C49 157 64 132 68 105Q69 98 61 98C44 97 28 117 23 137Z"/>
+    <path id="letter-y-shape" transform="translate(686 108)" d="M14 10Q26 2 37 4L49 8Q56 10 52 17C43 31 32 53 28 67C25 79 27 86 35 85C50 83 65 63 74 40L82 17Q85 10 92 11L110 14Q117 15 114 24C106 47 94 74 85 98C76 122 66 145 43 168C10 201-39 226-95 236C-160 247-222 244-312 240Q-320 239-322 234L-322 230Q-321 224-313 225C-224 231-166 237-98 224C-53 215-14 196 18 166C33 152 43 129 49 106C37 112 24 117 11 113C-6 109-11 94-7 75C-4 57 4 40 11 25L4 26Q-2 26 0 21Z"/>
+    <mask id="behind-first-e" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="350" style="mask-type:luminance">
+      <rect width="880" height="350" fill="white"/>
+      <use href="#first-e-shape" fill="black" fill-rule="evenodd" stroke="black" stroke-width="15"/>
+    </mask>
+    <mask id="behind-n" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="350" style="mask-type:luminance">
+      <rect width="880" height="350" fill="white"/>
+      <use href="#letter-n-shape" fill="black" stroke="black" stroke-width="14"/>
+    </mask>
+    <mask id="behind-d" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="350" style="mask-type:luminance">
+      <rect width="880" height="350" fill="white"/>
+      <use href="#letter-d-shape" fill="black" fill-rule="evenodd" stroke="black" stroke-width="13"/>
+    </mask>
+    <g id="letter-k" mask="url(#behind-first-e)">
+      <use href="#letter-k-shape"/>
     </g>
-    <g id="subtitle">
+    <g id="name-ending">
+      <use href="#first-e-shape" mask="url(#behind-n)"/>
+      <use href="#letter-n-shape"/>
+      <use href="#second-e-shape" mask="url(#behind-d)"/>
+      <use href="#letter-d-shape"/>
+      <use href="#letter-y-shape"/>
+    </g>
+    <!-- The inset strokes end independently, like bent lengths of glass. -->
+    <path id="k-inset-tube" transform="translate(96 92)" d="M26 7Q40-2 53-2C38 13 25 49 17 83 M14 96L4 142 M50 74C65 60 80 38 101 25 M47 106C59 114 75 129 89 148Q95 155 105 149"/>
+    <g id="k-inset" mask="url(#behind-first-e)">
+      <use href="#k-inset-tube"/>
+    </g>
+    <g id="name-insets">
+      <g mask="url(#behind-n)">
+        <path transform="translate(205 124) rotate(-6 54 68)" d="M13 88C13 51 39 19 74 17C90 16 99 25 99 38 M19 99C28 125 66 122 98 106 M42 71L73 67Q91 62 98 51"/>
+      </g>
+      <path transform="translate(323 111) rotate(3 57 79)" d="M30 15Q26 29 24 42 M21 53C17 80 7 107 3 123 M38 47C56 34 74 25 89 26C104 27 109 35 106 48 M101 60L81 112Q75 132 107 121"/>
+      <g mask="url(#behind-d)">
+        <path transform="translate(447 103) rotate(2 54 75)" d="M14 99C11 72 34 30 68 24Q94 20 98 40 M20 111C36 138 76 130 103 103 M39 80L67 74Q89 69 97 54"/>
+      </g>
+      <path transform="translate(564 78)" d="M112 9Q104 16 97 36 M93 50L87 81 M83 95L66 152Q65 162 78 169 M52 86C29 92 13 117 9 137C5 156 17 174 35 171Q47 169 57 161"/>
+      <path transform="translate(686 108)" d="M35 17C24 36 15 58 11 77C9 87 14 101 25 102 M99 24C84 67 76 79 63 108 M58 119C53 134 46 147 37 157C6 191-47 220-96 230C-154 242-230 239-307 233"/>
+    </g>
+    <path id="tube-end-glints" d="M336 216l-3 9m176-30l8-2m63 23q-1 8 2 13m189-36 4-10"/>
+    <path id="tag-accents" d="M70 205q-11-3-17-10 M746 99q17-12 32-9"/>
+    <path id="tag-cool-accents" d="M71 191q-14-10-17-21 M64 173q-7-10-8-18 M771 104q16-7 28-3 M792 115q11-4 19 0 M630 298q24-5 41-19 M383 101q35-25 78-24 22 0 39 5"/>
+    <g id="subtitle" transform="translate(24 -21)">
       <path d="M358 316v19 M358 320c-8-9-18-2-18 6s10 13 18 4"/>
       <path d="M397 302v33 M397 320c-8-9-19-2-19 6s11 13 19 4 M406 326h17c0-7-3-10-8-10-7 0-10 5-10 10 0 9 9 12 16 7 M430 316l9 19 10-19 M458 326h17c0-7-3-10-8-10-6 0-10 5-10 10 0 9 9 12 16 7 M484 302v33 M511 326c0 6-4 10-10 10-5 0-9-4-9-10s4-10 9-10c6 0 10 4 10 10z M520 344v-28 M520 320c7-9 18-3 18 5s-9 14-18 6 M546 326h17c0-7-4-10-9-10-6 0-9 5-9 10 0 9 8 12 16 7 M571 335v-19 M572 323c3-6 7-8 13-7"/>
     </g>
     <clipPath id="glitch-slices">
-      <path d="M88 142h134v6H88z M101 179h133v7H101z M89 221h154v5H89z"/>
+      <path d="M81 125h126v5H81z M79 182h131v7H79z M78 221h132v5H78z"/>
     </clipPath>
     <path id="poster-outline" d="M2 4l38 1 17-4 36 2 24-2 95 1 35-1 44 3 52-3 30 2 20-1 44 4 20-2 2 25-2 37 3 44-1 42 1 32-5 35-17-3-12 3-48-1-28 2-68-2-29 2-27-1-88 1-36-2-34 3-29-2-26 2-8-3-1-24 3-23-3-31 1-40-2-13 1-35-2-16z"/>
     <clipPath id="poster-clip">
@@ -148,15 +206,21 @@
       </g>
 
       <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <g transform="translate(3 5)" stroke="#f052a7" stroke-width="73" opacity=".49" filter="url(#pink-spill)">
-          <use href="#letter-k" class="flicker"/>
-          <use href="#name-ending"/>
+        <g transform="translate(3 5)" stroke="#f052a7" filter="url(#pink-spill)" mask="url(#light-under-neon)">
+          <use href="#name-ending" stroke-width="61" opacity=".46"/>
+          <g class="flicker">
+            <use href="#letter-k" stroke-width="54" opacity=".43"/>
+          </g>
+          <use href="#tag-cool-accents" stroke="#4189f8" stroke-width="18" opacity=".24"/>
         </g>
         <use href="#subtitle" transform="translate(2 5)" stroke="#e4c7c9" stroke-width="17" opacity=".24" filter="url(#soft-focus)"/>
         <g stroke="#100914" opacity=".92" filter="url(#tube-shadow)">
           <use href="#letter-k" transform="translate(13 18)" stroke-width="15"/>
-          <use href="#name-ending" transform="translate(13 18)" stroke-width="15"/>
+          <use href="#name-ending" transform="translate(13 18)" stroke-width="15" mask="url(#light-under-neon)"/>
           <use href="#subtitle" transform="translate(8 12)" stroke-width="9.5"/>
+        </g>
+        <g stroke="#100914" opacity=".83" filter="url(#tube-shadow)" mask="url(#tail-shadow-area)">
+          <use href="#letter-y-shape" transform="translate(8 11)" stroke-width="11.5"/>
         </g>
       </g>
       <rect width="880" height="782" filter="url(#aggregate)" opacity=".12"/>
@@ -164,25 +228,45 @@
   </g>
 
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g stroke="#ff3aa4" stroke-width="23" opacity=".75" filter="url(#tube-bloom)">
-      <use href="#letter-k" class="flicker"/>
+    <g fill="#191020" fill-rule="evenodd" stroke="#452039" stroke-width="3.5">
+      <use href="#letter-k"/>
       <use href="#name-ending"/>
     </g>
-    <use href="#letter-k" stroke="#79334f" stroke-width="9.5"/>
-
-    <g class="flicker">
-      <use href="#letter-k" stroke="#e91991" stroke-width="13"/>
-      <use href="#letter-k" stroke="#ff60bc" stroke-width="8.6"/>
-      <use href="#letter-k" stroke="#ffe4f4" stroke-width="4.3"/>
+    <g stroke-width="15" opacity=".68" filter="url(#tube-bloom)">
+      <use href="#name-ending" stroke="#ff3aa4"/>
+      <use href="#tag-accents" stroke="#ff3aa4" stroke-width="9"/>
+      <use href="#tag-cool-accents" stroke="#479aff" stroke-width="8"/>
+      <g class="flicker" stroke="#ff3aa4">
+        <use href="#letter-k"/>
+      </g>
     </g>
-    <use href="#name-ending" stroke="#e91991" stroke-width="13"/>
-    <use href="#name-ending" stroke="#ff60bc" stroke-width="8.6"/>
-    <use href="#name-ending" stroke="#ffe4f4" stroke-width="4.3"/>
+    <g class="flicker">
+      <use href="#letter-k" stroke="#e91991" stroke-width="11"/>
+      <use href="#letter-k" stroke="#ff60bc" stroke-width="7.3"/>
+      <use href="#letter-k" stroke="#ffe4f4" stroke-width="3"/>
+      <use href="#k-inset" stroke="#479aff" stroke-width="7" opacity=".48" filter="url(#soft-focus)"/>
+      <use href="#k-inset" stroke="#1763c7" stroke-width="6.4"/>
+      <use href="#k-inset" stroke="#67bbff" stroke-width="4.1"/>
+      <use href="#k-inset" stroke="#d7f7ff" stroke-width="1.95"/>
+    </g>
+    <use href="#name-ending" stroke="#e91991" stroke-width="10.7"/>
+    <use href="#name-ending" stroke="#ff60bc" stroke-width="7.2"/>
+    <use href="#name-ending" stroke="#ffe4f4" stroke-width="3.2"/>
+    <use href="#name-insets" stroke="#479aff" stroke-width="7" opacity=".48" filter="url(#soft-focus)"/>
+    <use href="#name-insets" stroke="#1763c7" stroke-width="6.4"/>
+    <use href="#name-insets" stroke="#67bbff" stroke-width="4.1"/>
+    <use href="#name-insets" stroke="#d7f7ff" stroke-width="1.95"/>
+    <use href="#tube-end-glints" stroke="#dff8ff" stroke-width="1.55" opacity=".67"/>
+    <use href="#tag-accents" stroke="#e91991" stroke-width="7.3"/>
+    <use href="#tag-accents" stroke="#ff60bc" stroke-width="4.4"/>
+    <use href="#tag-accents" stroke="#ffd3ed" stroke-width="1.85"/>
+    <use href="#tag-cool-accents" stroke="#1763c7" stroke-width="6.5"/>
+    <use href="#tag-cool-accents" stroke="#67bbff" stroke-width="4.5"/>
+    <use href="#tag-cool-accents" stroke="#d7f7ff" stroke-width="1.7"/>
 
     <g class="interference" clip-path="url(#glitch-slices)">
-      <use href="#letter-k" stroke="#62fff1" stroke-width="6.2" transform="translate(-9 1)"/>
-      <use href="#letter-k" stroke="#ff399e" stroke-width="7.5" transform="translate(12 -2)"/>
-      <path d="M106 145h22m59 38h38m-104 41h31" stroke="#f873c6" stroke-width="1.5" opacity=".7"/>
+      <use href="#letter-k" stroke="#ffb4de" stroke-width="4.8" transform="translate(-8 1)"/>
+      <use href="#letter-k" stroke="#ff399e" stroke-width="6.1" transform="translate(10 -2)"/>
     </g>
 
     <use href="#subtitle" stroke="#d7c3d2" stroke-width="8" opacity=".76" filter="url(#soft-focus)"/>

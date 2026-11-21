@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-wall.svg" width="880" alt="Pink neon on a concrete wall reads Kenedy and a developer. Graffiti reads: black screen, linux terminal, an AI to argue with. The wanted poster reads: I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. A stencil reads: Computer Engineering student.">
+  <img src="./assets/profile-wall.svg" width="880" alt="Graffiti-style neon on a concrete wall spells Kenedy in pink and blue, with a developer in white below. Graffiti reads: black screen, linux terminal, an AI to argue with. The wanted poster reads: I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. A stencil reads: Computer Engineering student.">
 </p>
 
 <p align="center">
