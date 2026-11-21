@@ -1,10 +1,10 @@
-# Kenedy
-a developer
+<p align="center">
+  <img src="./assets/profile-wall.svg" width="880" alt="Pink neon on a concrete wall reads Kenedy and a developer. Graffiti reads: black screen, linux terminal, an AI to argue with. The wanted poster reads: I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. A stencil reads: Computer Engineering student.">
+</p>
 
-black screen, linux terminal, an AI to argue with.
-
-I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved.
-
-Computer Engineering student at UTFPR.
-
-[website](https://kenedy.dev) · [linkedin](https://www.linkedin.com/in/kenedyk/) · [github](https://github.com/kenedydev) · [email](mailto:kenedy@kenedy.dev)
+<p align="center">
+  <a href="https://kenedy.dev"><img src="./assets/website.svg" width="136" height="50" alt="website: kenedy.dev"></a>
+  <a href="https://www.linkedin.com/in/kenedyk/"><img src="./assets/linkedin.svg" width="136" height="50" alt="linkedin: in/kenedyk"></a>
+  <a href="https://github.com/kenedydev"><img src="./assets/github.svg" width="136" height="50" alt="github: kenedydev"></a>
+  <a href="mailto:kenedy@kenedy.dev"><img src="./assets/email.svg" width="136" height="50" alt="email: kenedy@kenedy.dev"></a>
+</p>

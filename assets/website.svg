@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 50" width="136" height="50">
+  <title>website: kenedy.dev</title>
+  <defs>
+    <path id="sticker" d="M5 5 41 3l19 1 67-1 6 5-1 31-5 6-39-1-27 2-53-1-5-5L4 16Z"/>
+  </defs>
+  <use href="#sticker" fill="#120f16" opacity=".45" transform="translate(0 1.5)"/>
+  <use href="#sticker" fill="#25202a" stroke="#a7708c"/>
+  <path d="M6 15 7 7l22-1m73 35 23 1 4-4M50 7l7-.4m48-.5 8-.4m-94 35 6 .7m44-1 9-.5" fill="none" stroke="#da9cbb" stroke-linecap="round" stroke-opacity=".32"/>
+  <rect x="11" y="11" width="19" height="25" fill="#392637"/>
+  <g fill="none" stroke="#ff8fd1" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="20.5" cy="23.5" r="6.5"/>
+    <ellipse cx="20.5" cy="23.5" rx="2.8" ry="6.5"/>
+    <path d="M14 23.5h13"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace">
+    <text x="38" y="22.5" fill="#f9eee9" font-size="13" font-weight="700">website</text>
+    <text x="38" y="35" fill="#d6afc5" font-size="9.5">kenedy.dev</text>
+  </g>
+</svg>

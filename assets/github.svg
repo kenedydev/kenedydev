@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136 50" width="136" height="50">
+  <title>github: kenedydev</title>
+  <defs>
+    <path id="sticker" d="M8 4 29 3l20 2 23-1 46 1 9-2 6 6-1 29-4 7-31 1-31-2-58 1-5-6 1-30Z"/>
+  </defs>
+  <use href="#sticker" fill="#120f16" opacity=".45" transform="translate(0 1.5)"/>
+  <use href="#sticker" fill="#29262c" stroke="#95867c"/>
+  <path d="M6 12 9 7l14-1m85 37 18-.8 4-5M46 7.5l7 .4m47-.3 6 .2m-88 34 9-.5m35 .3 6-.4" fill="none" stroke="#ddbc95" stroke-linecap="round" stroke-opacity=".35"/>
+  <rect x="11" y="11" width="19" height="25" fill="#40343a"/>
+  <g fill="none" stroke="#ddbc95" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="16.8" cy="18.5" r="1.7"/>
+    <circle cx="16.8" cy="28.5" r="1.7"/>
+    <circle cx="24" cy="18.5" r="1.7"/>
+    <path d="M16.8 20.2v6.6m0-2.6c4.3 0 7.2-1.6 7.2-4"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace">
+    <text x="38" y="22.5" fill="#f9eee9" font-size="13" font-weight="700">github</text>
+    <text x="38" y="35" fill="#d5c0ac" font-size="9.5">kenedydev</text>
+  </g>
+</svg>

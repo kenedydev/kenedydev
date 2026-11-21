@@ -1,0 +1,318 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="782" viewBox="0 0 880 782" role="img" aria-labelledby="title description">
+  <title id="title">Kenedy, a developer</title>
+  <desc id="description">Pink neon on a concrete wall. Painted on the wall: black screen, linux terminal, an AI to argue with. On a wanted poster: I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. Stenciled on the wall: Computer Engineering student.</desc>
+
+  <style>
+    .interference { opacity: 0; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .flicker { animation: tube-flicker 10s steps(1, end) infinite; }
+      .interference { animation: color-shift 10s steps(1, end) infinite; }
+    }
+
+    @keyframes tube-flicker {
+      0%, 91.8%, 93.2%, 100% { opacity: 1; }
+      91%, 92.5% { opacity: .04; }
+    }
+
+    @keyframes color-shift {
+      0%, 91.45%, 91.8%, 92.95%, 100% { opacity: 0; }
+      91% { opacity: .85; }
+      92.5% { opacity: .65; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="fade-across">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".009" stop-color="white" stop-opacity="0"/>
+      <stop offset=".045" stop-color="white" stop-opacity=".32"/>
+      <stop offset=".14" stop-color="white"/>
+      <stop offset=".86" stop-color="white"/>
+      <stop offset=".955" stop-color="white" stop-opacity=".32"/>
+      <stop offset=".991" stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade-down" x2="0" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".006" stop-color="white" stop-opacity="0"/>
+      <stop offset=".045" stop-color="white" stop-opacity=".36"/>
+      <stop offset=".14" stop-color="white"/>
+      <stop offset=".88" stop-color="white"/>
+      <stop offset=".96" stop-color="white" stop-opacity=".35"/>
+      <stop offset=".994" stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="fade-edges" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="782" style="mask-type:alpha">
+      <rect width="880" height="782" fill="url(#fade-across)"/>
+    </mask>
+    <mask id="fade-ends" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="782" style="mask-type:alpha">
+      <rect width="880" height="782" fill="url(#fade-down)"/>
+    </mask>
+    <radialGradient id="concrete" cx=".53" cy=".42" r=".72">
+      <stop offset="0" stop-color="#292333"/>
+      <stop offset=".53" stop-color="#201d28"/>
+      <stop offset="1" stop-color="#0d0c13"/>
+    </radialGradient>
+    <radialGradient id="cool-light">
+      <stop offset="0" stop-color="#6ba6a9" stop-opacity=".24"/>
+      <stop offset=".56" stop-color="#48676d" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#48676d" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="wall-mottling" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".018 .024" numOctaves="4" seed="32"/>
+      <feColorMatrix values="0 0 0 0 .46  0 0 0 0 .42  0 0 0 0 .49  2.5 0 0 0 -1.02"/>
+    </filter>
+    <filter id="wall-shadow" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".029 .011" numOctaves="3" seed="7"/>
+      <feColorMatrix values="0 0 0 0 .026  0 0 0 0 .021  0 0 0 0 .03  2.7 0 0 0 -1.05"/>
+    </filter>
+    <filter id="aggregate" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".59 .69" numOctaves="2" seed="12"/>
+      <feColorMatrix values="0 0 0 0 .73  0 0 0 0 .64  0 0 0 0 .71  4.5 0 0 0 -2.25"/>
+    </filter>
+    <filter id="pink-spill" filterUnits="userSpaceOnUse" x="15" y="25" width="850" height="380" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="tube-bloom" filterUnits="userSpaceOnUse" x="56" y="48" width="776" height="330" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="tube-shadow" filterUnits="userSpaceOnUse" x="85" y="76" width="742" height="310" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="4.2"/>
+    </filter>
+    <filter id="soft-focus" x="-20%" y="-40%" width="140%" height="180%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="paint-edges" x="-6%" y="-30%" width="112%" height="160%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".27 .52" numOctaves="2" seed="21" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="marker-edges" x="-4%" y="-12%" width="108%" height="124%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".46 .37" numOctaves="2" seed="13" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="cast-pores" width="75" height="81" patternUnits="userSpaceOnUse">
+      <path fill="#080610" opacity=".54" d="M14 17h3l-1 3-3-.5zM33 45l4-1-1 2-2 1zM52 30l3-1v2l-2 1zM7 54l5-1 1 2-4 2zM65 1l2 1-1 2-2-1zM63 66l3-1 3 2-4 2zM30 73l3-2 2 2-1 1z"/>
+      <path fill="#cdc2d2" opacity=".38" d="M16 20h2l-2 1h-3zM36 47l1 1-3 1-2-.5zM9 58l3-1-1 2H7zM65 69l4-2-2 3z"/>
+    </pattern>
+    <linearGradient id="paper" x1="0" y1="0" x2=".78" y2="1">
+      <stop offset="0" stop-color="#c49b72"/>
+      <stop offset=".13" stop-color="#e4c39e"/>
+      <stop offset=".69" stop-color="#e0bd93"/>
+      <stop offset="1" stop-color="#b08661"/>
+    </linearGradient>
+    <filter id="paper-grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".14 .44" numOctaves="3" seed="17"/>
+      <feColorMatrix values="0 0 0 0 .35  0 0 0 0 .21  0 0 0 0 .12  3.2 0 0 0 -1.4"/>
+    </filter>
+    <filter id="poster-ink" x="-4%" y="-6%" width="108%" height="112%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".41 .47" numOctaves="2" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.55" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <path id="letter-k" d="M119 246 C145 216 149 152 174 121 C193 97 211 106 200 130 C190 151 168 171 151 186 M153 202 C179 191 194 172 209 163 M163 198 C180 205 181 235 201 239 C210 241 219 237 226 231"/>
+    <g id="name-ending">
+      <path d="M230 208 C257 209 284 196 289 179 C294 162 277 161 262 170 C245 180 230 199 232 217 C235 246 276 246 307 218"/>
+      <path d="M312 239 C321 214 326 184 335 166 M323 206 C343 181 363 158 379 168 C395 180 374 210 374 224 C374 240 392 242 414 224"/>
+      <path d="M429 204 C458 204 481 192 488 176 C494 159 477 157 462 165 C442 176 429 193 430 213 C432 241 462 245 501 216"/>
+      <path d="M595 180 C578 158 557 159 540 173 C522 188 512 210 515 224 C521 245 545 240 563 224 C589 201 611 149 626 111 C631 99 638 105 636 117 C628 149 601 191 594 215 C586 242 603 244 622 233 L636 224"/>
+      <path d="M658 166 C649 186 639 213 646 227 C653 244 674 237 693 219 C712 200 723 181 730 159 C718 192 710 236 685 270 C665 298 617 302 613 279 C611 266 627 255 651 254 C681 252 714 253 754 235"/>
+    </g>
+    <g id="subtitle">
+      <path d="M358 316v19 M358 320c-8-9-18-2-18 6s10 13 18 4"/>
+      <path d="M397 302v33 M397 320c-8-9-19-2-19 6s11 13 19 4 M406 326h17c0-7-3-10-8-10-7 0-10 5-10 10 0 9 9 12 16 7 M430 316l9 19 10-19 M458 326h17c0-7-3-10-8-10-6 0-10 5-10 10 0 9 9 12 16 7 M484 302v33 M511 326c0 6-4 10-10 10-5 0-9-4-9-10s4-10 9-10c6 0 10 4 10 10z M520 344v-28 M520 320c7-9 18-3 18 5s-9 14-18 6 M546 326h17c0-7-4-10-9-10-6 0-9 5-9 10 0 9 8 12 16 7 M571 335v-19 M572 323c3-6 7-8 13-7"/>
+    </g>
+    <clipPath id="glitch-slices">
+      <path d="M88 142h134v6H88z M101 179h133v7H101z M89 221h154v5H89z"/>
+    </clipPath>
+    <path id="poster-outline" d="M2 4l38 1 17-4 36 2 24-2 95 1 35-1 44 3 52-3 30 2 20-1 44 4 20-2 2 25-2 37 3 44-1 42 1 32-5 35-17-3-12 3-48-1-28 2-68-2-29 2-27-1-88 1-36-2-34 3-29-2-26 2-8-3-1-24 3-23-3-31 1-40-2-13 1-35-2-16z"/>
+    <clipPath id="poster-clip">
+      <use href="#poster-outline"/>
+    </clipPath>
+  </defs>
+
+  <g mask="url(#fade-edges)">
+    <g mask="url(#fade-ends)">
+      <rect width="880" height="782" fill="url(#concrete)"/>
+      <ellipse cx="704" cy="558" rx="290" ry="295" fill="url(#cool-light)"/>
+      <rect width="880" height="782" filter="url(#wall-shadow)" opacity=".77"/>
+      <rect width="880" height="782" filter="url(#wall-mottling)" opacity=".43"/>
+      <rect width="880" height="782" fill="url(#cast-pores)" opacity=".46"/>
+
+      <g fill="none" stroke-linejoin="round">
+        <path d="M-12 90L112 95l75-3 208 3 295-2 204 4 M-14 364l82 3 111-2 85 3 166-4 194 1 91-4 189 4 M-13 615l170-4 151 2 146-5 172 3 83-5 190 3 M122 2l2 40-3 37 1 16 M744 96l-3 104 4 78-1 84 M96 366l2 86-3 72 1 90 M777 611l-4 61 2 112" stroke="#0b0a12" stroke-width="4" opacity=".7"/>
+        <path d="M-12 93L113 98l74-3 208 3 295-2 204 4 M-14 367l82 3 112-2 85 3 165-4 194 1 91-4 189 4 M-13 618l170-4 150 2 148-5 171 3 83-5 190 3 M747 99l-3 101 4 78-1 86 M99 369l3 83-4 72 1 92 M781 614l-5 58 2 114" stroke="#9d859e" stroke-width="1.15" opacity=".24"/>
+        <path d="M100 100l-8 21 1 19-12 24-1 15-7 14 2 18-11 10-2 19-8 19 m26-81 12-18 4-14 14-7 1-16 M749 365l13 28-5 9 17 28-3 14 18 22 10 17-1 16 17 20 6 32 12 13 M788 466l-3 16 7 19-5 9 7 25-1 24 M109 621l-10 13 2 31-14 14-3 35-12 12 M578 618l14 13 13 2 14 16 6 24-4 11 12 15 8 38" stroke="#100b15" stroke-width="1.6" opacity=".8"/>
+        <path d="M87 166l-5 12-6 15 2 19-12 11m695 180-2 1 17 26-2 14 17 21 11 18-1 15 17 20m-215 116 12 12 6 25-4 11 13 14" stroke="#857582" stroke-width=".7" opacity=".48"/>
+        <path d="M45 124l38-6m-49 7 13-2m659 189 38-5m-26 11 16-1m49 25 36-4m-16 5 27-1M111 475l19-5m-25 10 10-3m628 224 19-3m-568 46 86 1" stroke="#8f8090" stroke-width="1.4" opacity=".19"/>
+      </g>
+
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(3 5)" stroke="#f052a7" stroke-width="73" opacity=".49" filter="url(#pink-spill)">
+          <use href="#letter-k" class="flicker"/>
+          <use href="#name-ending"/>
+        </g>
+        <use href="#subtitle" transform="translate(2 5)" stroke="#e4c7c9" stroke-width="17" opacity=".24" filter="url(#soft-focus)"/>
+        <g stroke="#100914" opacity=".92" filter="url(#tube-shadow)">
+          <use href="#letter-k" transform="translate(13 18)" stroke-width="15"/>
+          <use href="#name-ending" transform="translate(13 18)" stroke-width="15"/>
+          <use href="#subtitle" transform="translate(8 12)" stroke-width="9.5"/>
+        </g>
+      </g>
+      <rect width="880" height="782" filter="url(#aggregate)" opacity=".12"/>
+    </g>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#ff3aa4" stroke-width="23" opacity=".75" filter="url(#tube-bloom)">
+      <use href="#letter-k" class="flicker"/>
+      <use href="#name-ending"/>
+    </g>
+    <use href="#letter-k" stroke="#79334f" stroke-width="9.5"/>
+
+    <g class="flicker">
+      <use href="#letter-k" stroke="#e91991" stroke-width="13"/>
+      <use href="#letter-k" stroke="#ff60bc" stroke-width="8.6"/>
+      <use href="#letter-k" stroke="#ffe4f4" stroke-width="4.3"/>
+    </g>
+    <use href="#name-ending" stroke="#e91991" stroke-width="13"/>
+    <use href="#name-ending" stroke="#ff60bc" stroke-width="8.6"/>
+    <use href="#name-ending" stroke="#ffe4f4" stroke-width="4.3"/>
+
+    <g class="interference" clip-path="url(#glitch-slices)">
+      <use href="#letter-k" stroke="#62fff1" stroke-width="6.2" transform="translate(-9 1)"/>
+      <use href="#letter-k" stroke="#ff399e" stroke-width="7.5" transform="translate(12 -2)"/>
+      <path d="M106 145h22m59 38h38m-104 41h31" stroke="#f873c6" stroke-width="1.5" opacity=".7"/>
+    </g>
+
+    <use href="#subtitle" stroke="#d7c3d2" stroke-width="8" opacity=".76" filter="url(#soft-focus)"/>
+    <use href="#subtitle" stroke="#e1c8d9" stroke-width="5.5"/>
+    <use href="#subtitle" stroke="#fbf4ef" stroke-width="2.8"/>
+  </g>
+
+  <g fill="none" stroke="#e1cecb" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#marker-edges)" aria-hidden="true">
+    <g transform="translate(148 412)">
+      <path stroke-width="6.6" d="M7-38C6-27 4-10 2-1M5-15C11-25 25-23 24-13C23-5 13 1 4-1"/>
+      <path stroke-width="5.5" d="M35-36C34-27 28-12 30-6Q31 0 38-2"/>
+      <path d="M60-22C52-27 42-18 43-8C44 2 55 0 60-12M63-24C62-15 54-2 64-1"/>
+      <path stroke-width="6.3" d="M86-20C78-27 69-17 70-8C71 1 78 1 86-5"/>
+      <path d="M99-36Q96-17 92-1M108-21L95-11Q100-10 111-2"/>
+    </g>
+    <g transform="translate(278 409)">
+      <path d="M20-21C14-28 0-20 5-15C9-10 19-13 18-6C17 1 5 3 1-1"/>
+      <path stroke-width="5.3" d="M46-20C38-29 27-18 27-9C26-1 34 1 44-4"/>
+      <path stroke-width="6.2" d="M51-2Q53-11 54-22M53-12Q63-27 69-22"/>
+      <path d="M75-13C84-12 94-18 90-23C86-28 74-21 73-12C71-3 77 2 91-4"/>
+      <path stroke-width="5.2" d="M99-12Q112-14 114-21C116-29 103-27 100-17C94-4 104 1 116-5"/>
+      <path stroke-width="6.3" d="M120-3Q124-15 124-25M122-13C130-25 144-31 141-19L138-5Q138 0 146-2"/>
+      <path stroke-width="5.2" d="M159-4Q158 3 153 8"/>
+    </g>
+    <g transform="translate(454 405)">
+      <path d="M11-38C9-25 1-8 4-3Q6 1 13-2"/>
+      <path stroke-width="5.7" d="M26-24Q22-14 22-7Q20 1 28-3M28-33l.7-1"/>
+      <path stroke-width="6.3" d="M34-2L38-25M37-12C44-26 58-28 56-18Q51-3 58-2"/>
+      <path stroke-width="5.2" d="M69-26C66-17 62-4 69-3Q77-2 84-21M85-25C82-16 78-2 86-3"/>
+      <path d="M94-25Q99-14 108-5M110-23Q100-16 92-4"/>
+    </g>
+    <g transform="translate(581 401) scale(.9 1)">
+      <path stroke-width="6.7" d="M13-33C11-22 2-9 6-4Q10 0 20-6M0-21l22-3"/>
+      <path d="M29-13C43-12 49-22 43-24C37-29 26-21 27-11C27-4 35 0 46-6"/>
+      <path stroke-width="6.1" d="M52-4l4-21M54-14Q62-26 70-23"/>
+      <path stroke-width="6.4" d="M76-3L80-24M78-12C85-25 94-28 94-20L90-4M92-14Q107-31 108-21L105-7Q105-3 111-5"/>
+      <path d="M121-25Q116-13 116-7Q117-2 122-4M121-35l.8-.8"/>
+      <path stroke-width="6" d="M129-5Q131-17 133-24M131-13C136-24 150-29 150-21Q144-4 152-5"/>
+      <path stroke-width="5.6" d="M172-23C163-28 154-18 156-9C158-2 168-5 174-16M176-25Q171-11 172-7Q173-4 178-6"/>
+      <path stroke-width="6.4" d="M188-38Q179-14 183-7Q185-4 190-6M200-8Q201-3 195 4"/>
+    </g>
+    <g transform="translate(216 468)">
+      <path stroke-width="6.6" d="M21-26C13-30 1-19 2-9C2 2 15-2 22-15M26-26Q18-8 21-3Q24 0 29-3"/>
+      <path d="M34-2Q36-14 38-25M36-12Q50-32 55-23C57-19 49-3 56-4"/>
+    </g>
+    <g stroke="#a4d8d7" stroke-width="9.4" stroke-linecap="square">
+      <path d="M287 466C300 447 316 426 321 425C324 426 329 449 334 465M295 453Q313 449 332 447"/>
+      <path stroke-width="8.6" d="M345 426Q361 422 379 422M363 424Q356 441 350 464M341 469Q356 466 370 462"/>
+    </g>
+    <g transform="translate(394 462)">
+      <path stroke-width="6.4" d="M13-35Q10-24 6-13C3-3 6 3 20-4M0-21l23-4"/>
+      <path stroke-width="5.6" d="M36-25C25-23 23-12 26-6C30 2 45-3 47-16C48-23 43-27 36-25Z"/>
+    </g>
+    <g transform="translate(459 459)">
+      <path d="M22-23C12-29 2-17 2-9C1 2 16-1 21-14M24-25C18-12 17-3 25-3"/>
+      <path stroke-width="6.4" d="M30-3Q34-17 35-24M33-13Q44-27 49-23"/>
+      <path d="M68-24C59-29 49-19 49-11C49 0 62-3 68-14M71-25C66-9 68 8 55 12Q49 13 45 10"/>
+      <path stroke-width="5.5" d="M82-24C77-15 74-1 82-3Q91-5 96-22M98-25Q91-5 98-5"/>
+      <path stroke-width="6.3" d="M105-13C118-13 125-20 120-24C115-29 103-20 103-11C104-4 110-1 122-5"/>
+    </g>
+    <g transform="translate(603 454)">
+      <path stroke-width="6.1" d="M1-20Q-1-2 6-2Q13-2 18-18C12 4 27 3 32-23"/>
+      <path stroke-width="5.6" d="M41-24Q35-16 36-8Q36-2 42-5M43-34l1-.4"/>
+      <path stroke-width="6.4" d="M58-36Q52-22 50-10C49-3 54-2 62-7M47-21l19-4"/>
+      <path d="M77-37Q69-22 67-4M69-15Q80-29 87-24C92-20 82-8 85-5Q86-3 91-5"/>
+      <path stroke-width="7" d="M101-6l.3-.3"/>
+    </g>
+    <path d="M252 409Q255 418 251.5 424Q251 428 253 429Q256 429 255.5 426Q254 422 257 412Z M622 395Q620 405 621 410Q622 413 624 412Q624 409 623 407L625 394Z M661 449Q661 457 658.5 463Q658 465 660 466Q662 466 661.7 463L664.5 449Z" fill="#e1cecb" stroke="none" opacity=".67"/>
+    <path d="M330 463Q334 471 331.5 479Q330 485 333 486Q336 486 335 482Q334 479 335 474L337 463Z" fill="#a4d8d7" stroke="none" opacity=".78"/>
+  </g>
+
+  <g transform="translate(118 515) rotate(-3 230 110)">
+    <use href="#poster-outline" transform="translate(-3 9) scale(1.005 1.01)" fill="#09090f" opacity=".85" filter="url(#soft-focus)"/>
+    <path d="M-4 211l-3 13 42-2 23 4 94-5 88 1 20 4 114-1 31 2 45-2 12-24 1-65-27-2z" fill="#997557" opacity=".43"/>
+    <use href="#poster-outline" fill="url(#paper)"/>
+    <g clip-path="url(#poster-clip)">
+      <rect width="462" height="223" filter="url(#paper-grain)" opacity=".23"/>
+      <path d="M-4 29l85-19 28 2L78 7 50-4H-5zM2 145l12 30-5 13-3 36H-5zm450 11-6 42-24 16 30 13h10v-66zM-4 220l64-8 64 8 136 3 54-8 42 6z" fill="#714829" opacity=".17"/>
+      <path d="M0 15l61-9 20 4m230-8 18 6 73-1 50 9M0 205l37 6 41-4 32 8 67-1m135-1 96-4 48 8" fill="none" stroke="#fce1b6" stroke-width="1.3" opacity=".56"/>
+      <path d="M-2 68l73 6 51-3 85 4 84-2 54 3 118-7 M39 220l5-10 1-12 14-16 6-11 M374 222l-5-8-15-7-9-12 M428 0l-6 11 3 13 15 13" fill="none" stroke="#8d653d" stroke-width="1" opacity=".42"/>
+    </g>
+    <path d="M13 23V12h12m406 0h14v11M13 194v12h12m406 0h14v-12" fill="none" stroke="#543326" stroke-width="1.8" opacity=".75"/>
+    <path d="M31 117h395m-392 4h390" stroke="#684331" stroke-width="1.2" opacity=".7"/>
+    <g fill="#39231e" filter="url(#poster-ink)" aria-hidden="true">
+      <path d="m 60.75,52 v -4.1 l -1.2,-0.1 c -2.9,-0.4 -3.45,-1.05 -3.4,-4.2 V 26.35 c -0.05,-3.15 0.5,-3.8 3.4,-4.2 l 1.2,-0.1 v -4.1 h -17.95 v 4.1 l 1.2,0.1 c 2.9,0.4 3.45,1.05 3.4,4.2 V 43.6 c 0.05,3.15 -0.5,3.8 -3.4,4.2 l -1.2,0.1 V 52 Z
+        M 90.8,26.9 h -3.1 l -7.8,1.45 v 4.05 l 0.9,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 17.85 c -0.05,2.95 -0.2,3.3 -2.2,3.8 l -1.45,0.35 v 4.05 h 15.4 V 58.6 l -1.45,-0.35 c -2,-0.5 -2.15,-0.85 -2.2,-3.8 v -3.4 c 3.3,1.25 4,1.4 6,1.4 6.75,0 11.7,-5.65 11.7,-13.4 0,-7.1 -5.15,-12.6 -11.85,-12.6 -2.2,0 -3.5,0.4 -6.7,1.9 z
+        m 0.85,6.45 c 1.1,-1.25 2.8,-2.05 4.35,-2.05 3,0 4.85,2.9 4.85,7.6 0,5.35 -1.95,8.45 -5.35,8.45 -1.3,0 -2.85,-0.6 -3.85,-1.55 z
+        M 137.4,46.5 c -0.9,0.85 -0.9,0.85 -1.25,0.85 -0.35,0 -0.75,-0.25 -0.85,-0.55 -0.15,-0.35 -0.15,-0.35 -0.2,-2.25 V 34.7 c 0,-2.65 -0.55,-4.25 -1.9,-5.55 -1.75,-1.7 -5.05,-2.7 -9,-2.7 -6.45,0 -11.1,2.9 -11.1,6.9 0,2.15 1.6,3.75 3.7,3.75 2.45,0 3.9,-1.45 3.85,-3.85 0,-0.7 0.1,-1.05 0.45,-1.3 0.6,-0.55 1.7,-0.9 2.75,-0.9 2.15,0 3.15,0.85 3.15,2.7 v 2.55 c -2.75,0.25 -5.15,0.7 -7.3,1.35 -5,1.5 -7.5,4.15 -7.5,7.95 0,4.1 3.2,6.85 7.95,6.85 2.85,0 5.4,-0.85 7.95,-2.55 1.2,1.55 3.4,2.55 5.75,2.55 2.25,0 4.1,-0.75 6.35,-2.55 z
+        m -10.4,-1.2 c -1.3,1.2 -2.55,1.75 -3.95,1.75 -1.4,0 -2.35,-1 -2.35,-2.5 0,-2.15 2,-3.45 6.3,-4.25 z
+        m 25.8,-18.4 h -3.1 l -8.8,1.45 v 4.05 l 1.05,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.25 -2.2,3.8 l -1.6,0.35 V 52 h 15.65 v -4.05 l -1.55,-0.35 c -2,-0.55 -2.15,-0.85 -2.2,-3.8 z
+        m -4.35,-11.4 c -2.7,0 -4.95,2.25 -4.95,4.9 0,2.65 2.1,4.8 4.75,4.8 2.7,0 4.95,-2.25 4.95,-4.95 0,-2.7 -2.05,-4.75 -4.75,-4.75 z
+        m 21.35,11.4 h -3.1 l -7.8,1.45 v 4.05 l 0.9,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.3 -2.2,3.8 l -1.45,0.35 V 52 h 15.4 v -4.05 l -1.45,-0.35 c -2,-0.5 -2.15,-0.85 -2.2,-3.8 v -9.7 c 0.7,-0.6 1.2,-0.8 2,-0.8 0.6,0 0.6,0 1.75,0.75 0.95,0.6 1.55,0.8 2.55,0.8 2.3,0 3.95,-1.6 3.95,-3.8 0,-2.65 -1.95,-4.6 -4.5,-4.6 -2.1,0 -3.3,0.55 -6.6,2.9 z
+        m 27.7,9.2 h -13.65 l -2.35,5.4 h 13.75 z
+        m 13,-9.2 h -3.1 l -7.8,1.45 v 4.05 l 0.9,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 17.85 c -0.05,2.95 -0.2,3.3 -2.2,3.8 l -1.45,0.35 v 4.05 h 15.4 V 58.6 l -1.45,-0.35 c -2,-0.5 -2.15,-0.85 -2.2,-3.8 v -3.4 c 3.3,1.25 4,1.4 6,1.4 6.75,0 11.7,-5.65 11.7,-13.4 0,-7.1 -5.15,-12.6 -11.85,-12.6 -2.2,0 -3.5,0.4 -6.7,1.9 z
+        m 0.85,6.45 c 1.1,-1.25 2.8,-2.05 4.35,-2.05 3,0 4.85,2.9 4.85,7.6 0,5.35 -1.95,8.45 -5.35,8.45 -1.3,0 -2.85,-0.6 -3.85,-1.55 z
+        m 31.15,-6.45 h -3.1 l -7.8,1.45 v 4.05 l 0.9,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.3 -2.2,3.8 l -1.45,0.35 V 52 h 15.4 v -4.05 l -1.45,-0.35 c -2,-0.5 -2.15,-0.85 -2.2,-3.8 v -9.7 c 0.7,-0.6 1.2,-0.8 2,-0.8 0.6,0 0.6,0 1.75,0.75 0.95,0.6 1.55,0.8 2.55,0.8 2.3,0 3.95,-1.6 3.95,-3.8 0,-2.65 -1.95,-4.6 -4.5,-4.6 -2.1,0 -3.3,0.55 -6.6,2.9 z
+        m 26.25,-0.45 c -8.1,0 -13.6,5.1 -13.6,12.65 0,8.2 5.35,13.35 13.85,13.35 8.4,0 13.85,-5.05 13.85,-12.85 0,-8.05 -5.5,-13.15 -14.1,-13.15 z
+        m 0.3,5.1 c 3.15,0 4.7,2.7 4.7,8.25 0,5.1 -1.6,7.8 -4.7,7.8 -3.2,0 -4.8,-2.65 -4.8,-7.9 0,-5.4 1.6,-8.15 4.8,-8.15 z
+        m 27.95,16.1 c -3.3,-0.25 -4.05,-0.6 -4.05,-1.75 0,-0.6 0.45,-1.1 1.05,-1.1 0.15,0 0.45,0.05 0.75,0.1 1.3,0.3 2.9,0.45 4.2,0.45 6.55,0 11.1,-3.9 11.1,-9.45 0,-3 -1.15,-5.15 -3.9,-7.3 0.5,-0.45 0.8,-0.6 1.55,-0.6 0.45,0 0.55,0 1.55,0.35 0.45,0.15 0.85,0.25 1.25,0.25 1.65,0 3,-1.25 3,-2.85 0,-1.9 -1.7,-3.4 -3.9,-3.4 -1.65,0 -3.7,0.8 -4.9,1.9 -0.65,0.6 -1.1,1.1 -2.2,2.6 -2,-0.45 -2.95,-0.6 -4.35,-0.6 -6.4,0 -11.1,4.05 -11.1,9.6 0,2.8 1.15,5.1 3.45,6.85 -2.95,0.75 -4.8,3.05 -4.8,6.1 0,1.75 0.8,3.1 2.5,4.35 -2.3,1.05 -3.4,2.45 -3.4,4.5 0,2.65 1.8,4.65 5.05,5.7 2.05,0.65 5.1,1.05 7.95,1.05 4.3,0 8.2,-0.8 10.65,-2.1 2.45,-1.35 4.2,-4.4 4.2,-7.3 0,-3.95 -2.6,-6.2 -7.75,-6.65 z
+        m 1.55,-16.8 c 2.4,0 3.4,1.6 3.4,5.5 0,3.35 -1.05,4.9 -3.4,4.9 -2.35,0 -3.4,-1.55 -3.4,-5 0,-3.8 1,-5.4 3.4,-5.4 z
+        m 2.4,25.05 c 3.1,0.35 3.95,0.75 3.95,2 0,1.65 -2.3,2.4 -7.25,2.4 -4.2,0 -7.2,-1.2 -7.2,-2.9 0,-0.95 0.55,-1.8 1.65,-2.5 z
+        m 24.85,-29 h -3.1 l -7.8,1.45 v 4.05 l 0.9,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.3 -2.2,3.8 l -1.45,0.35 V 52 h 15.4 v -4.05 l -1.45,-0.35 c -2,-0.5 -2.15,-0.85 -2.2,-3.8 v -9.7 c 0.7,-0.6 1.2,-0.8 2,-0.8 0.6,0 0.6,0 1.75,0.75 0.95,0.6 1.55,0.8 2.55,0.8 2.3,0 3.95,-1.6 3.95,-3.8 0,-2.65 -1.95,-4.6 -4.5,-4.6 -2.1,0 -3.3,0.55 -6.6,2.9 z
+        m 38,19.6 c -0.9,0.85 -0.9,0.85 -1.25,0.85 -0.35,0 -0.75,-0.25 -0.85,-0.55 -0.15,-0.35 -0.15,-0.35 -0.2,-2.25 V 34.7 c 0,-2.65 -0.55,-4.25 -1.9,-5.55 -1.75,-1.7 -5.05,-2.7 -9,-2.7 -6.45,0 -11.1,2.9 -11.1,6.9 0,2.15 1.6,3.75 3.7,3.75 2.45,0 3.9,-1.45 3.85,-3.85 0,-0.7 0.1,-1.05 0.45,-1.3 0.6,-0.55 1.7,-0.9 2.75,-0.9 2.15,0 3.15,0.85 3.15,2.7 v 2.55 c -2.75,0.25 -5.15,0.7 -7.3,1.35 -5,1.5 -7.5,4.15 -7.5,7.95 0,4.1 3.2,6.85 7.95,6.85 2.85,0 5.4,-0.85 7.95,-2.55 1.2,1.55 3.4,2.55 5.75,2.55 2.25,0 4.1,-0.75 6.35,-2.55 z
+        m -10.4,-1.2 c -1.3,1.2 -2.55,1.75 -3.95,1.75 -1.4,0 -2.35,-1 -2.35,-2.5 0,-2.15 2,-3.45 6.3,-4.25 z
+        m 25.85,-11.7 c 1.9,-1.25 4.15,-2.05 5.75,-2.05 1.55,0 2.2,0.9 2.2,2.95 v 9.3 c 0,2.8 -0.35,3.45 -2.2,3.9 l -0.9,0.25 V 52 h 14.3 v -4.05 l -0.9,-0.25 c -1.85,-0.45 -2.2,-1.1 -2.2,-3.9 V 33.6 c 1.6,-1 3.85,-1.75 5.2,-1.75 1.7,0 2.75,1.1 2.75,2.85 v 9.1 c 0,2.8 -0.35,3.45 -2.2,3.9 l -0.9,0.25 V 52 h 15.05 v -4.05 l -1.65,-0.35 c -2,-0.55 -2.15,-0.85 -2.2,-3.8 v -9.7 c 0,-2.5 -0.35,-3.7 -1.5,-5.05 -1.55,-1.75 -3.65,-2.6 -6.55,-2.6 -3.25,0 -6.4,0.9 -9.25,2.6 -1.85,-1.75 -4.1,-2.6 -6.85,-2.6 -3.3,0 -6.3,0.8 -8.8,2.3 V 26.9 h -3.1 l -8,1.45 v 4.05 l 1.1,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.25 -2.2,3.8 l -1.65,0.35 V 52 h 15.05 v -4.05 l -0.9,-0.25 c -1.85,-0.45 -2.2,-1.1 -2.2,-3.9 z"/>
+      <path d="m 153.4,93.55 -3,-8.75 c -0.15,-0.45 -0.2,-0.7 -0.2,-1.05 0,-0.95 0.6,-1.45 2,-1.7 l 0.75,-0.1 V 77.9 h -13.1 v 4.05 l 0.55,0.15 c 1.3,0.45 1.35,0.5 2.1,2.45 l 0.2,0.55 -2.85,9.05 -3.65,-9.35 c -0.1,-0.3 -0.2,-0.65 -0.2,-0.9 0,-0.9 0.8,-1.6 2.05,-1.85 l 0.65,-0.1 V 77.9 h -13.45 v 4.05 l 0.55,0.2 c 1.95,0.8 2.35,1.35 3.35,4.2 l 6.75,16.65 h 5.8 l 3.75,-10.75 3.7,10.75 h 6.05 l 6.5,-16.9 c 0.9,-2.65 2,-3.75 3.8,-4.05 l 0.55,-0.1 V 77.9 h -11.95 v 4.05 l 0.6,0.15 c 1.45,0.4 2.15,1 2.15,1.9 0,0.2 -0.05,0.5 -0.15,0.8 z
+        M 179.85,77.9 h -3.1 l -8.8,1.45 v 4.05 l 1.05,0.1 c 2.25,0.3 2.8,1.15 2.75,4.1 v 7.2 c -0.05,2.95 -0.2,3.25 -2.2,3.8 l -1.6,0.35 V 103 h 15.65 v -4.05 l -1.55,-0.35 c -2,-0.55 -2.15,-0.85 -2.2,-3.8 z
+        M 175.5,66.5 c -2.7,0 -4.95,2.25 -4.95,4.9 0,2.65 2.1,4.8 4.75,4.8 2.7,0 4.95,-2.25 4.95,-4.95 0,-2.7 -2.05,-4.75 -4.75,-4.75 z
+        m 29.2,15.65 V 77.9 h -6.85 v -7.95 h -4.7 c -0.5,5.15 -2.85,7.9 -7.2,8.5 v 3.95 h 3.8 v 12.65 c 0,3.05 0.2,4.25 0.8,5.45 1.1,2 3.05,2.95 6,2.95 4.5,0 7.65,-1.5 10.55,-5 l -3,-3.55 c -2.25,2.15 -3.15,2.75 -4.45,2.75 -1.35,0 -1.8,-0.8 -1.8,-3.4 v -12.1 z
+        m 16.9,2.65 c 1.2,-1.05 3.7,-1.95 5.35,-1.95 1.4,0 2.1,1 2.1,3.1 v 8.85 c -0.05,2.95 -0.15,3.15 -2.2,3.9 l -0.65,0.25 V 103 h 14.95 v -4.05 l -1.8,-0.35 c -2,-0.55 -2.15,-0.85 -2.2,-3.8 v -9.5 c 0,-2.8 -0.55,-4.35 -2.1,-5.75 -1.45,-1.35 -3.45,-2.1 -5.65,-2.1 -2.75,0 -4.85,0.6 -7.8,2.25 V 66.8 h -3.25 c -3.15,1.35 -6.55,2.2 -8.8,2.15 V 73 l 1,0.1 c 2.55,0.45 3,1.05 2.95,4.05 V 94.8 c -0.05,2.95 -0.2,3.25 -2.2,3.8 l -1.75,0.35 V 103 h 14.9 v -4.05 l -0.65,-0.25 c -2.05,-0.75 -2.15,-0.95 -2.2,-3.9 z
+        m 60.45,-15.85 h -7.75 l -9.9,23.75 c -1.9,4.4 -3.05,5.65 -5.85,6.1 l -0.8,0.1 v 4.1 h 15.45 v -4.1 l -0.8,-0.1 c -2.7,-0.35 -3.7,-0.85 -3.7,-1.8 0,-0.35 0.2,-1.2 0.45,-1.8 l 1.6,-4.3 h 10.75 l 1.5,4.25 c 0.35,0.9 0.55,1.75 0.55,2.15 0,0.9 -0.9,1.35 -2.95,1.5 l -1.25,0.1 v 4.1 h 18.25 v -4.1 l -0.8,-0.1 c -2.8,-0.5 -3.2,-1 -4.95,-5.45 z
+        m -9.7,17.7 3.8,-9.75 3.7,9.75 z
+        M 314.4,103 v -4.1 l -1.2,-0.1 c -2.9,-0.4 -3.45,-1.05 -3.4,-4.2 V 77.35 c -0.05,-3.15 0.5,-3.8 3.4,-4.2 l 1.2,-0.1 v -4.1 h -17.95 v 4.1 l 1.2,0.1 c 2.9,0.4 3.45,1.05 3.4,4.2 V 94.6 c 0.05,3.15 -0.5,3.8 -3.4,4.2 l -1.2,0.1 v 4.1 z
+        m 8.25,6 c 3.9,-2.9 5.65,-5.7 5.65,-9.05 0,-3.15 -1.85,-5.3 -4.6,-5.3 -2.45,0 -4.35,1.9 -4.35,4.45 0,2.2 1.2,3.55 3.6,4.05 -0.6,1.15 -1.3,2.05 -2.7,3.3 z"/>
+    </g>
+    <text x="30" y="147" font-family="Georgia, 'Times New Roman', serif" font-size="28.5" font-weight="700" fill="#2f211e">
+      <tspan x="30">choosing the approach, testing</tspan>
+      <tspan x="30" y="176" textLength="400" lengthAdjust="spacingAndGlyphs">and reviewing, round after round,</tspan>
+      <tspan x="30" y="205">until the problem is solved.</tspan>
+    </text>
+    <path d="M451 197l-12 16-17 5 9-12z" fill="#f0d2aa" opacity=".8"/>
+  </g>
+
+  <g transform="rotate(3 688 620)" fill="#bdd3cf" font-family="monospace" font-weight="900" filter="url(#paint-edges)">
+    <text font-size="29" letter-spacing="-.8">
+      <tspan x="609" y="578">Computer</tspan>
+      <tspan x="609" y="613">Engineering</tspan>
+      <tspan x="606" y="657" font-size="41" letter-spacing="-1.3">student.</tspan>
+    </text>
+    <path d="M609 667l172-3-1 4-169 1z" opacity=".66"/>
+    <path d="M624 570h3m40 0h2m15 0h3m-63 35h3m24 0h3m33 0h3m33 0h3m22 0h3m-141 40h4m26 0h5m28 0h4m32 0h5m26 0h5" stroke="#2c303c" stroke-width="1.5"/>
+  </g>
+</svg>
