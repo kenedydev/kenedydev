@@ -3,22 +3,67 @@
   <desc id="description">Pink neon on a concrete wall. Painted on the wall: black screen, linux terminal, an AI to argue with. On a wanted poster: I pair-program with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. Stenciled on the wall: Computer Engineering student.</desc>
 
   <style>
-    .interference { opacity: 0; }
+    .glitch-slices { visibility: hidden; }
 
     @media (prefers-reduced-motion: no-preference) {
-      .flicker { animation: tube-flicker 10s steps(1, end) infinite; }
-      .interference { animation: color-shift 10s steps(1, end) infinite; }
+      .name-steady { animation: name-steady 8s steps(1, end) infinite; }
+      .glitch-slices { animation: glitch-window 8s steps(1, end) infinite; }
+      .glitch-top { animation: glitch-top 8s steps(1, end) infinite; }
+      .glitch-upper { animation: glitch-upper 8s steps(1, end) infinite; }
+      .glitch-lower { animation: glitch-lower 8s steps(1, end) infinite; }
+      .glitch-bottom { animation: glitch-bottom 8s steps(1, end) infinite; }
+      .first-e-pink { animation: first-e-current 8s steps(1, end) infinite; }
+      .subtitle-o-light { animation: subtitle-current 8s steps(1, end) infinite; }
     }
 
-    @keyframes tube-flicker {
-      0%, 91.8%, 93.2%, 100% { opacity: 1; }
-      91%, 92.5% { opacity: .04; }
+    /* At 2 s the name glitches and the o lights. The e dips at 2.3 s. */
+    @keyframes name-steady {
+      0%, 28.75%, 100% { opacity: 1; }
+      25% { opacity: .12; }
     }
 
-    @keyframes color-shift {
-      0%, 91.45%, 91.8%, 92.95%, 100% { opacity: 0; }
-      91% { opacity: .85; }
-      92.5% { opacity: .65; }
+    @keyframes glitch-window {
+      0%, 28.75%, 100% { visibility: hidden; }
+      25% { visibility: visible; }
+    }
+
+    @keyframes glitch-top {
+      0%, 28.75%, 100% { transform: none; }
+      25% { transform: translateX(18px); }
+      26.25% { transform: translateX(-8px); }
+      27.5% { transform: translateX(6px); }
+    }
+
+    @keyframes glitch-upper {
+      0%, 28.75%, 100% { transform: none; }
+      25% { transform: translateX(-30px); }
+      26.25% { transform: translateX(14px); }
+      27.5% { transform: translateX(-11px); }
+    }
+
+    @keyframes glitch-lower {
+      0%, 28.75%, 100% { transform: none; }
+      25% { transform: translateX(25px); }
+      26.25% { transform: translateX(-21px); }
+      27.5% { transform: translateX(12px); }
+    }
+
+    @keyframes glitch-bottom {
+      0%, 28.75%, 100% { transform: none; }
+      25% { transform: translateX(-12px); }
+      26.25% { transform: translateX(23px); }
+      27.5% { transform: translateX(-6px); }
+    }
+
+    @keyframes first-e-current {
+      0%, 30.5%, 100% { opacity: 1; }
+      28.75% { opacity: .44; }
+    }
+
+    @keyframes subtitle-current {
+      0%, 50.875%, 100% { opacity: 0; }
+      25%, 49.625% { opacity: 1; }
+      48.75% { opacity: .14; }
     }
   </style>
 
@@ -150,12 +195,22 @@
     <g id="letter-k" mask="url(#behind-first-e)">
       <use href="#letter-k-shape"/>
     </g>
-    <g id="name-ending">
+    <g id="first-e-outline">
       <use href="#first-e-shape" mask="url(#behind-n)"/>
+    </g>
+    <g id="last-four-outlines">
       <use href="#letter-n-shape"/>
       <use href="#second-e-shape" mask="url(#behind-d)"/>
       <use href="#letter-d-shape"/>
       <use href="#letter-y-shape"/>
+    </g>
+    <g id="name-ending">
+      <use href="#first-e-outline"/>
+      <use href="#last-four-outlines"/>
+    </g>
+    <g id="name-outlines">
+      <use href="#letter-k"/>
+      <use href="#name-ending"/>
     </g>
     <!-- The inset strokes end independently, like bent lengths of glass. -->
     <path id="k-inset-tube" transform="translate(96 92)" d="M26 7Q40-2 53-2C38 13 25 49 17 83 M14 96L4 142 M50 74C65 60 80 38 101 25 M47 106C59 114 75 129 89 148Q95 155 105 149"/>
@@ -176,13 +231,33 @@
     <path id="tube-end-glints" d="M336 216l-3 9m176-30l8-2m63 23q-1 8 2 13m189-36 4-10"/>
     <path id="tag-accents" d="M70 205q-11-3-17-10 M746 99q17-12 32-9"/>
     <path id="tag-cool-accents" d="M71 191q-14-10-17-21 M64 173q-7-10-8-18 M771 104q16-7 28-3 M792 115q11-4 19 0 M630 298q24-5 41-19 M383 101q35-25 78-24 22 0 39 5"/>
-    <g id="subtitle" transform="translate(24 -21)">
+    <g id="subtitle-fixed-tubes">
       <path d="M358 316v19 M358 320c-8-9-18-2-18 6s10 13 18 4"/>
-      <path d="M397 302v33 M397 320c-8-9-19-2-19 6s11 13 19 4 M406 326h17c0-7-3-10-8-10-7 0-10 5-10 10 0 9 9 12 16 7 M430 316l9 19 10-19 M458 326h17c0-7-3-10-8-10-6 0-10 5-10 10 0 9 9 12 16 7 M484 302v33 M511 326c0 6-4 10-10 10-5 0-9-4-9-10s4-10 9-10c6 0 10 4 10 10z M520 344v-28 M520 320c7-9 18-3 18 5s-9 14-18 6 M546 326h17c0-7-4-10-9-10-6 0-9 5-9 10 0 9 8 12 16 7 M571 335v-19 M572 323c3-6 7-8 13-7"/>
+      <path d="M397 302v33 M397 320c-8-9-19-2-19 6s11 13 19 4 M406 326h17c0-7-3-10-8-10-7 0-10 5-10 10 0 9 9 12 16 7 M430 316l9 19 10-19 M458 326h17c0-7-3-10-8-10-6 0-10 5-10 10 0 9 9 12 16 7 M484 302v33 M520 344v-28 M520 320c7-9 18-3 18 5s-9 14-18 6 M546 326h17c0-7-4-10-9-10-6 0-9 5-9 10 0 9 8 12 16 7 M571 335v-19 M572 323c3-6 7-8 13-7"/>
     </g>
-    <clipPath id="glitch-slices">
-      <path d="M81 125h126v5H81z M79 182h131v7H79z M78 221h132v5H78z"/>
+    <path id="subtitle-o" d="M511 326c0 6-4 10-10 10-5 0-9-4-9-10s4-10 9-10c6 0 10 4 10 10z"/>
+    <clipPath id="glitch-top-band">
+      <rect y="53" width="880" height="74"/>
     </clipPath>
+    <clipPath id="glitch-upper-band">
+      <rect y="127" width="880" height="54"/>
+    </clipPath>
+    <clipPath id="glitch-lower-band">
+      <rect y="181" width="880" height="51"/>
+    </clipPath>
+    <clipPath id="glitch-bottom-band">
+      <rect y="232" width="880" height="130"/>
+    </clipPath>
+    <g id="glitch-tubes">
+      <use href="#name-outlines" transform="translate(-6 1)" stroke="#45d7ff" stroke-width="5.5" opacity=".82"/>
+      <use href="#name-outlines" transform="translate(8 -1)" stroke="#f91486" stroke-width="7" opacity=".86"/>
+      <use href="#name-outlines" stroke="#ff60bc" stroke-width="6.2"/>
+      <use href="#name-outlines" stroke="#ffe4f4" stroke-width="2.5"/>
+      <g stroke="#79c6ff" stroke-width="3">
+        <use href="#k-inset"/>
+        <use href="#name-insets"/>
+      </g>
+    </g>
     <path id="poster-outline" d="M2 4l38 1 17-4 36 2 24-2 95 1 35-1 44 3 52-3 30 2 20-1 44 4 20-2 2 25-2 37 3 44-1 42 1 32-5 35-17-3-12 3-48-1-28 2-68-2-29 2-27-1-88 1-36-2-34 3-29-2-26 2-8-3-1-24 3-23-3-31 1-40-2-13 1-35-2-16z"/>
     <clipPath id="poster-clip">
       <use href="#poster-outline"/>
@@ -207,17 +282,26 @@
 
       <g fill="none" stroke-linecap="round" stroke-linejoin="round">
         <g transform="translate(3 5)" stroke="#f052a7" filter="url(#pink-spill)" mask="url(#light-under-neon)">
-          <use href="#name-ending" stroke-width="61" opacity=".46"/>
-          <g class="flicker">
-            <use href="#letter-k" stroke-width="54" opacity=".43"/>
+          <g stroke-width="61" opacity=".46">
+            <use href="#last-four-outlines"/>
+            <use href="#first-e-outline" class="first-e-pink"/>
           </g>
+          <use href="#letter-k" stroke-width="54" opacity=".43"/>
           <use href="#tag-cool-accents" stroke="#4189f8" stroke-width="18" opacity=".24"/>
         </g>
-        <use href="#subtitle" transform="translate(2 5)" stroke="#e4c7c9" stroke-width="17" opacity=".24" filter="url(#soft-focus)"/>
+        <g transform="translate(24 -21)">
+          <g transform="translate(2 5)" stroke="#e4c7c9" stroke-width="17" opacity=".24" filter="url(#soft-focus)">
+            <use href="#subtitle-fixed-tubes"/>
+            <use href="#subtitle-o" class="subtitle-o-light"/>
+          </g>
+        </g>
         <g stroke="#100914" opacity=".92" filter="url(#tube-shadow)">
           <use href="#letter-k" transform="translate(13 18)" stroke-width="15"/>
           <use href="#name-ending" transform="translate(13 18)" stroke-width="15" mask="url(#light-under-neon)"/>
-          <use href="#subtitle" transform="translate(8 12)" stroke-width="9.5"/>
+          <g transform="translate(24 -21) translate(8 12)" stroke-width="9.5">
+            <use href="#subtitle-fixed-tubes"/>
+            <use href="#subtitle-o"/>
+          </g>
         </g>
         <g stroke="#100914" opacity=".83" filter="url(#tube-shadow)" mask="url(#tail-shadow-area)">
           <use href="#letter-y-shape" transform="translate(8 11)" stroke-width="11.5"/>
@@ -233,14 +317,13 @@
       <use href="#name-ending"/>
     </g>
     <g stroke-width="15" opacity=".68" filter="url(#tube-bloom)">
-      <use href="#name-ending" stroke="#ff3aa4"/>
+      <use href="#last-four-outlines" stroke="#ff3aa4"/>
+      <use href="#first-e-outline" class="first-e-pink" stroke="#ff3aa4"/>
       <use href="#tag-accents" stroke="#ff3aa4" stroke-width="9"/>
       <use href="#tag-cool-accents" stroke="#479aff" stroke-width="8"/>
-      <g class="flicker" stroke="#ff3aa4">
-        <use href="#letter-k"/>
-      </g>
+      <use href="#letter-k" stroke="#ff3aa4"/>
     </g>
-    <g class="flicker">
+    <g class="name-steady">
       <use href="#letter-k" stroke="#e91991" stroke-width="11"/>
       <use href="#letter-k" stroke="#ff60bc" stroke-width="7.3"/>
       <use href="#letter-k" stroke="#ffe4f4" stroke-width="3"/>
@@ -248,15 +331,34 @@
       <use href="#k-inset" stroke="#1763c7" stroke-width="6.4"/>
       <use href="#k-inset" stroke="#67bbff" stroke-width="4.1"/>
       <use href="#k-inset" stroke="#d7f7ff" stroke-width="1.95"/>
+      <g class="first-e-pink">
+        <use href="#first-e-outline" stroke="#e91991" stroke-width="10.7"/>
+        <use href="#first-e-outline" stroke="#ff60bc" stroke-width="7.2"/>
+        <use href="#first-e-outline" stroke="#ffe4f4" stroke-width="3.2"/>
+      </g>
+      <use href="#last-four-outlines" stroke="#e91991" stroke-width="10.7"/>
+      <use href="#last-four-outlines" stroke="#ff60bc" stroke-width="7.2"/>
+      <use href="#last-four-outlines" stroke="#ffe4f4" stroke-width="3.2"/>
+      <use href="#name-insets" stroke="#479aff" stroke-width="7" opacity=".48" filter="url(#soft-focus)"/>
+      <use href="#name-insets" stroke="#1763c7" stroke-width="6.4"/>
+      <use href="#name-insets" stroke="#67bbff" stroke-width="4.1"/>
+      <use href="#name-insets" stroke="#d7f7ff" stroke-width="1.95"/>
+      <use href="#tube-end-glints" stroke="#dff8ff" stroke-width="1.55" opacity=".67"/>
     </g>
-    <use href="#name-ending" stroke="#e91991" stroke-width="10.7"/>
-    <use href="#name-ending" stroke="#ff60bc" stroke-width="7.2"/>
-    <use href="#name-ending" stroke="#ffe4f4" stroke-width="3.2"/>
-    <use href="#name-insets" stroke="#479aff" stroke-width="7" opacity=".48" filter="url(#soft-focus)"/>
-    <use href="#name-insets" stroke="#1763c7" stroke-width="6.4"/>
-    <use href="#name-insets" stroke="#67bbff" stroke-width="4.1"/>
-    <use href="#name-insets" stroke="#d7f7ff" stroke-width="1.95"/>
-    <use href="#tube-end-glints" stroke="#dff8ff" stroke-width="1.55" opacity=".67"/>
+    <g class="glitch-slices">
+      <g clip-path="url(#glitch-top-band)">
+        <use href="#glitch-tubes" class="glitch-top"/>
+      </g>
+      <g clip-path="url(#glitch-upper-band)">
+        <use href="#glitch-tubes" class="glitch-upper"/>
+      </g>
+      <g clip-path="url(#glitch-lower-band)">
+        <use href="#glitch-tubes" class="glitch-lower"/>
+      </g>
+      <g clip-path="url(#glitch-bottom-band)">
+        <use href="#glitch-tubes" class="glitch-bottom"/>
+      </g>
+    </g>
     <use href="#tag-accents" stroke="#e91991" stroke-width="7.3"/>
     <use href="#tag-accents" stroke="#ff60bc" stroke-width="4.4"/>
     <use href="#tag-accents" stroke="#ffd3ed" stroke-width="1.85"/>
@@ -264,14 +366,18 @@
     <use href="#tag-cool-accents" stroke="#67bbff" stroke-width="4.5"/>
     <use href="#tag-cool-accents" stroke="#d7f7ff" stroke-width="1.7"/>
 
-    <g class="interference" clip-path="url(#glitch-slices)">
-      <use href="#letter-k" stroke="#ffb4de" stroke-width="4.8" transform="translate(-8 1)"/>
-      <use href="#letter-k" stroke="#ff399e" stroke-width="6.1" transform="translate(10 -2)"/>
+    <g transform="translate(24 -21)">
+      <use href="#subtitle-fixed-tubes" stroke="#d7c3d2" stroke-width="8" opacity=".76" filter="url(#soft-focus)"/>
+      <use href="#subtitle-fixed-tubes" stroke="#e1c8d9" stroke-width="5.5"/>
+      <use href="#subtitle-fixed-tubes" stroke="#fbf4ef" stroke-width="2.8"/>
+      <use href="#subtitle-o" stroke="#423744" stroke-width="5.5"/>
+      <use href="#subtitle-o" stroke="#968799" stroke-width="1.4" opacity=".74"/>
+      <g class="subtitle-o-light">
+        <use href="#subtitle-o" stroke="#d7c3d2" stroke-width="8" opacity=".76" filter="url(#soft-focus)"/>
+        <use href="#subtitle-o" stroke="#e1c8d9" stroke-width="5.5"/>
+        <use href="#subtitle-o" stroke="#fbf4ef" stroke-width="2.8"/>
+      </g>
     </g>
-
-    <use href="#subtitle" stroke="#d7c3d2" stroke-width="8" opacity=".76" filter="url(#soft-focus)"/>
-    <use href="#subtitle" stroke="#e1c8d9" stroke-width="5.5"/>
-    <use href="#subtitle" stroke="#fbf4ef" stroke-width="2.8"/>
   </g>
 
   <g fill="none" stroke="#e1cecb" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#marker-edges)" aria-hidden="true">
