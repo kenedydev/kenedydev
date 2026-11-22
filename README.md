@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-wall.svg" width="880" alt="A pink neon sign reading Kenedy, with a developer in white below, on a graffiti-covered concrete wall at night. Sprayed on the wall: black screen, linux terminal, an AI to argue with. A wanted poster reads: wanted for pair programming with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. Stenciled on the wall: Computer Engineering student.">
+  <img src="./assets/profile-wall.svg" width="880" alt="A neon sign reading KENEDY in double-line capitals, magenta outer tubes with cyan tubes inside them, with a developer in cyan below, on a graffiti-covered concrete wall at night. Sprayed on the wall: black screen, linux terminal, an AI to argue with. A wanted poster reads: wanted for pair programming with AI, choosing the approach, testing and reviewing, round after round, until the problem is solved. Stenciled on the wall: Computer Engineering student.">
 </p>
 
 <p align="center">
