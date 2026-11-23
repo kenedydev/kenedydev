@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  <a href="https://kenedy.dev"><img src="./assets/website.svg" width="212" height="80" alt="website: kenedy.dev"></a>
-  <a href="https://www.linkedin.com/in/kenedyk/"><img src="./assets/linkedin.svg" width="212" height="80" alt="linkedin: in/kenedyk"></a>
-  <a href="https://github.com/kenedydev"><img src="./assets/github.svg" width="212" height="80" alt="github: kenedydev"></a>
-  <a href="mailto:kenedy@kenedy.dev"><img src="./assets/email.svg" width="212" height="80" alt="email: kenedy@kenedy.dev"></a>
+  <a href="https://kenedy.dev"><img src="./assets/website.svg" width="190" height="72" alt="website: kenedy.dev"></a>
+  <a href="https://www.linkedin.com/in/kenedyk/"><img src="./assets/linkedin.svg" width="190" height="72" alt="linkedin: in/kenedyk"></a>
+  <a href="https://github.com/kenedydev"><img src="./assets/github.svg" width="190" height="72" alt="github: kenedydev"></a>
+  <a href="mailto:kenedy@kenedy.dev"><img src="./assets/email.svg" width="190" height="72" alt="email: kenedy@kenedy.dev"></a>
 </p>

@@ -49,7 +49,7 @@ Inside an `<img>`, SVG filters (turbulence, blur, filtered masks) are recomputed
 
 - Each icon glows in the color of its link: the brand color, the highlight color of kenedy.dev for the website, and amber for email, which has none.
 - Each sticker has its own flicker period and pattern, so the icons never blink together. Keep them out of sync.
-- The four must fit in one row in the README column, which is about as wide as the wall (880 px), gaps included.
+- The four must fit in one row in the README column, gaps included. On GitHub that column is narrower than the wall: four images of 212 px wrapped to a second row.
 
 ### Text
 
