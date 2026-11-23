@@ -829,10 +829,14 @@
       <g fill="none" stroke-linecap="round" stroke-linejoin="round">
         <g class="haze">
           <g class="hum">
+            <g class="first-e" transform="translate(3 5)" filter="url(#pink-spill)" mask="url(#light-under-neon)" data-bake="spill-e" data-bake-scale="0.6" data-bake-quality="80">
+              <g stroke="#f03cc8" stroke-width="52" opacity=".44">
+                <use href="#e1-pink"/>
+              </g>
+            </g>
             <g transform="translate(3 5)" filter="url(#pink-spill)" mask="url(#light-under-neon)" data-bake="spill" data-bake-scale="0.6" data-bake-quality="80">
               <g stroke="#f03cc8" stroke-width="52" opacity=".44">
                 <use href="#nedy-pink"/>
-                <use href="#e1-pink"/>
                 <use href="#k-pink"/>
               </g>
               <g stroke="#1eb4ff" stroke-width="34" opacity=".26">
