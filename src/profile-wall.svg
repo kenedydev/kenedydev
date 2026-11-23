@@ -850,8 +850,6 @@
               <use href="#subtitle-fixed-tubes"/>
             </g>
           </g>
-          <path d="M826 113C834 90 842 66 860 30 M54 248C46 272 36 302 24 346" stroke="#07060b" stroke-width="2.4" opacity=".9"/>
-          <path d="M826 113C834 90 842 66 860 30 M54 248C46 272 36 302 24 346" stroke="#5a4b5e" stroke-width=".7" opacity=".6" transform="translate(-.6 -.6)"/>
           <g stroke="#0c0710" opacity=".85" filter="url(#tube-shadow)">
             <g transform="translate(9 13)" stroke-width="11">
               <use href="#name-outlines"/>
